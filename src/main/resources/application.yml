@@ -1,0 +1,24 @@
+server:
+  port: 8081 
+
+spring:
+  application:
+    name: magalu
+  datasource:
+    url: ${MYSQL_CONNECTION}   
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    database: default
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format-sql: true
+        generate-statistics: true
+  main:
+    banner-mode: "LOG"
+    allow-bean-definition-overriding: true
