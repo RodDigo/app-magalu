@@ -2,6 +2,8 @@ package com.magalu.entity;
 
 import java.time.LocalDateTime;
 
+import com.magalu.entity.Channel.Values;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,10 +12,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_notification")
 @Data
+@NoArgsConstructor
 public class Notification {
 
 	@Id
@@ -33,6 +37,14 @@ public class Notification {
 	@ManyToOne
 	@JoinColumn(name = "status_id")	
 	private Status status;
+
+	public Notification(LocalDateTime ldt, String destination, String message, Channel channel, Status status) {
+		this.ldt = ldt;
+		this.destination = destination;
+		this.message = message;
+		this.channel = channel;
+		this.status = status;
+	}
 	
 	
 }

@@ -17,6 +17,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
+        ddl-create: create-drop
         format-sql: true
         generate-statistics: true
   main:
