@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-magalu-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-magalu
+  template:
+    metadata:
+      labels:
+        app: app-magalu
+    spec:
+      containers:
+      - name: app-magalu-container
+        image: seu-nome-de-usuario/seu-app:versao
+        ports:
+        - containerPort: 8080
